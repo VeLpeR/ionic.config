@@ -17,6 +17,6 @@ export class AudioService {
   }
 
   pause = () => {
-    this.audioElement.pause();
+    this.audioElement.pause();//
   }
 }
