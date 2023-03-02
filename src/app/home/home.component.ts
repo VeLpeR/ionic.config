@@ -2,6 +2,7 @@ import { Component, ViewChild, AfterViewInit, OnInit, ElementRef } from '@angula
 import { PopupComponent } from './popup/popup.component';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AudioService } from '../audio.service';
 
 @Component({
   selector: 'app-home',
@@ -9,23 +10,32 @@ import { Router } from '@angular/router';
   styleUrls: ['home.component.scss'],
 })
 export class HomePage implements AfterViewInit, OnInit {
-  @ViewChild("audio") audio:ElementRef;
+  // @ViewChild("audio") audio: HTMLAudioElement;
+  
   isOpen = false;
 ngOnInit(){
   
 }
 
-  ngAfterViewInit(){
+  
+  ngAfterViewInit() {
+    
+    this.audioServie.play();
    
-    this.play();
+    // this.play();
   }
 
- play(){
-    this.audio.nativeElement.oncanplaythrough = () => {
-      console.log('playing')
-      this.audio.nativeElement.play();
-    }
- }
+//  play(){
+//     // this.audio.nativeElement.oncanplaythrough = () => {
+//     //   console.log('playing')
+//     //   this.audio.nativeElement.play();
+//     // }
+//   //  this.audio.play().then(() => {
+//   //    console.log('Audio Starts...');
+//   //  })
+   
+
+//  }
 imageArray:any =['assets/images/a.png',
                  'assets/images/b_locked.png',
                  'assets/images/c_locked.png',
@@ -36,7 +46,7 @@ imageArray:any =['assets/images/a.png',
                  'assets/images/h_locked.png',
                  'assets/images/i_locked.png',
                  ]
-  constructor(private modal: ModalController, private router: Router) {}
+  constructor(private modal: ModalController, private router: Router, private audioServie: AudioService) {}
   option = {
     slidesPerView: 1.5,
     centeredSlides: true,
@@ -56,7 +66,8 @@ imageArray:any =['assets/images/a.png',
 
     let { data, role } = await popover.onWillDismiss();
     if (data.confirm) {
-      this.audio.nativeElement.pause();
+      // this.audio.nativeElement.pause();
+      this.audioServie.pause();
       this.router.navigate(['/playfile']);
     }
   }

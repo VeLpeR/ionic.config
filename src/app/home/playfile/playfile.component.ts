@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
+import { AudioService } from 'src/app/audio.service';
 
 @Component({
   selector: 'app-playfile',
@@ -9,7 +10,7 @@ import { Location } from '@angular/common';
 export class PlayfileComponent implements OnInit {
   // @ViewChild("audio") audio:any;
   // isOpen = false;
-  constructor(private location:Location) { }
+  constructor(private location:Location, private audioService: AudioService) { }
 
   ngOnInit() {
   //   setInterval(
@@ -20,6 +21,7 @@ export class PlayfileComponent implements OnInit {
   // }
   }
   close = () => {
+    this.audioService.play();
     this.location.back();
   }
   
