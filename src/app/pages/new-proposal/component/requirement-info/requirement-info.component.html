@@ -1,0 +1,475 @@
+<div class="container">
+  <div class="id">
+    <div class="card">
+      <p>ID :</p>
+      <p>{{ proposalId }}</p>
+    </div>
+  </div>
+  <div class="main-content">
+    <form [formGroup]="requirementInfoForm" (ngSubmit)="onSubmit()">
+      <div class="form">
+        <div class="left">
+          <!-- <div class="section"> -->
+            <mat-accordion class="section">
+
+              <div class="field">
+            <!-- <div class="field"> -->
+              <!-- workstations -->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Workstations</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+               <div style="display: flex; flex-direction: column; gap:10px;">
+                            <div class="field-inputs">
+                              <mat-label>2.5x1.75</mat-label>
+                              <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="workstation2x1" >
+                            </div>
+                            <div class="field-inputs">
+                              <mat-label>3x2</mat-label>
+                              <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="workstation3x2">
+                            </div>
+                            <div class="field-inputs">
+                              <mat-label>4x2</mat-label>
+                              <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="workstation4x2">
+                            </div>
+                            <div class="field-inputs">
+                              <mat-label>5x2</mat-label>
+                              <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="workstation5x2">
+                            </div>
+                            <div class="field-inputs">
+                              <mat-label>5x2.5</mat-label>
+                              <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="workstation5x2_5">
+                            </div>
+                            <div  class="field-inputs">
+                              <mat-label>4x4</mat-label>
+                              <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="workstation4x4">
+                            </div>
+                            <div class="field-inputs">
+                              <mat-label>5x4</mat-label>
+                              <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="workstation5x4">
+                            </div>
+                            <div class="field-inputs">
+                              <mat-label>5x5</mat-label>
+                              <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="workstation5x5">
+                            </div>
+                    </div>
+              </mat-expansion-panel>
+            <!-- </div> -->
+            <!--------- cabin rooms ---------------->
+            <!-- <div class="field"> -->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Cabins</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>Regular</mat-label>
+                    <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="cabinRegular" >
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>Medium</mat-label>
+                    <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="cabinMedium">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>Large</mat-label>
+                    <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="cabinLarge">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>MD</mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="cabinMD">
+                  </div>
+          </div>
+              </mat-expansion-panel>
+            <!-- </div> -->
+          <!-- </div> -->
+          <!-- <div class="section"> -->
+<!-------------- Meeting Rooms ------------->
+            <!-- <div class="field"> -->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Meeting Rooms</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>4 Person </mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="meeting4P" >
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>6 Person </mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="meeting6P">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>8 Person</mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="meeting8P">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>10 Person</mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="meeting10P">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>12 Person</mat-label>
+                    <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="meeting12P">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>16 Person</mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="meeting16P">
+                  </div>
+          </div>
+              </mat-expansion-panel>
+
+            <!-- </div> -->
+            <!--------------- Board Room--------------- -->
+            <!-- <div class="field"> -->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+
+                    <p>Board Rooms</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                <div class="field-inputs">
+                  <mat-label>20 Person</mat-label>
+                  <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="board20P">
+                </div>
+                <div class="field-inputs">
+                  <mat-label>24 Person</mat-label>
+                  <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="board24P">
+                </div>
+              </div>
+              </mat-expansion-panel>
+            <!-- </div> -->
+          <!-- </div> -->
+<!---------------------- Collab Area ------------------ -->
+            <!-- <div class="field"> -->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Collab Area</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>4P Collab</mat-label>
+                    <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="collab4P">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>6P Collab</mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="collab6P">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>8P Collab</mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="collab8P">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+      <!-- Dry pantry -->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Dry Pantry</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>Regular Pantry</mat-label>
+                    <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="dryPantryNumber">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+
+ <!--------------- Reception ----------------------- -->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Reception</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>Small </mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="receptionSmall">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>Medium </mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="receptionMedium">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>Large </mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="receptionLarge">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+<!------------- Store Room ------------->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Store Room</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>Small</mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="storeRoomNumber">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+
+<!--------- Phone Booth ---------->
+              <mat-expansion-panel class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Phone Booth</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>Small</mat-label>
+                    <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="phoneBoothNumber">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+
+
+            </div>
+            <div class="field">
+ <!------- Cubical Room --------------->
+              <mat-expansion-panel  class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Cubical Room</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label> 7x8.5</mat-label>
+                    <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="cubicalCount">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+<!---------- Server Room -------->
+              <mat-expansion-panel  class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Server Room</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>1 Rack </mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="server1Rack">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>2 Rack </mat-label>
+                    <input  type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="server2Rack">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>3 Rack </mat-label>
+                    <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="server3Rack">
+                  </div>
+                  <div class="field-inputs">
+                    <mat-label>4 Rack </mat-label>
+                    <input type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="server4Rack">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+<!------------ Prayer Room ------------>
+              <mat-expansion-panel  class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Prayer/Pooja Room</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>Room</mat-label>
+                    <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="prayerRoomNumber">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+<!-- ------------Wellnewss Room ------ -->
+                <mat-expansion-panel  class="field-card">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <p>Wellness Room</p>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div style="display: flex; flex-direction: column; gap:10px;">
+                    <div class="field-inputs">
+                      <mat-label>Room</mat-label>
+                      <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="wellnessRoomNumber">
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+<!-- ------- Cafeteria ------------- -->
+              <mat-expansion-panel  class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Cafeteria</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>Capacity/Pax.</mat-label>
+                    <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="cafeteriaNumber">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+<!-- ---------------Niche Seating ------ -->
+<mat-expansion-panel  class="field-card">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <p>Niche Seating</p>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div style="display: flex; flex-direction: column; gap:10px;">
+    <div class="field-inputs">
+      <mat-label>Small 2Pax</mat-label>
+      <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="nicheSeat2Pax">
+    </div>
+    <div class="field-inputs">
+      <mat-label>Small 4Pax</mat-label>
+      <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="nicheSeat4Pax">
+    </div>
+  </div>
+</mat-expansion-panel>
+
+<!------------- Training Room ------ -->
+              <mat-expansion-panel  class="field-card">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <p>Training Room</p>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div style="display: flex; flex-direction: column; gap:10px;">
+                  <div class="field-inputs">
+                    <mat-label>Capacity/Pax.</mat-label>
+                    <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="trainingRoomNumber">
+                  </div>
+                </div>
+              </mat-expansion-panel>
+<!-- ---Games Room ------------ -->
+                <mat-expansion-panel  class="field-card">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <p>Games Room</p>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div style="display: flex; flex-direction: column; gap:10px;">
+                    <div class="field-inputs">
+                      <mat-label>Capacity/Pax.</mat-label>
+                      <input   type="number" min="0" oninput="this.value = Math.round(Math.abs(this.value))" formControlName="gameRoomNumber">
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+
+            </div>
+
+          </mat-accordion>
+
+        </div>
+        <div class="center">
+<h2>Client Requirement</h2>
+          <div class="text" id='datadiv'>
+            <p *ngIf="requirementInfoForm.value.workstation2x1">Workstation2x1= {{requirementInfoForm.value.workstation2x1}},</p>
+            <p *ngIf="requirementInfoForm.value.workstation3x2">Workstation3x2= {{requirementInfoForm.value.workstation3x2}} ,</p>
+            <p *ngIf="requirementInfoForm.value.workstation4x2">workstation4x2= {{requirementInfoForm.value.workstation4x2}},</p>
+            <p *ngIf="requirementInfoForm.value.workstation4x4">Workstation4x4= {{requirementInfoForm.value.workstation4x4}} ,</p>
+            <p *ngIf="requirementInfoForm.value.workstation5x2">Workstation5x2= {{requirementInfoForm.value.workstation5x2}},</p>
+            <p *ngIf="requirementInfoForm.value.workstation5x2_5">Workstation5x2.5= {{requirementInfoForm.value.workstation5x2_5}} ,</p>
+            <p *ngIf="requirementInfoForm.value.workstation5x4">Workstation5x4= {{requirementInfoForm.value.workstation5x4}},</p>
+            <p *ngIf="requirementInfoForm.value.workstation5x5">Workstation5x5= {{requirementInfoForm.value.workstation5x5}} ,</p>
+            <p *ngIf="requirementInfoForm.value.cabinRegular">Regular Cabin= {{requirementInfoForm.value.cabinRegular}} ,</p>
+            <p *ngIf="requirementInfoForm.value.cabinMedium">Medium Cabin= {{requirementInfoForm.value.cabinMedium}} ,</p>
+            <p *ngIf="requirementInfoForm.value.cabinLarge">Large Cabin= {{requirementInfoForm.value.cabinLarge}} ,</p>
+            <p *ngIf="requirementInfoForm.value.cabinMD">MD Cabin= {{requirementInfoForm.value.cabinMD}} ,</p>
+            <p *ngIf="requirementInfoForm.value.meeting4P">4P Meeting= {{requirementInfoForm.value.meeting4P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.meeting6P">6P Meeting= {{requirementInfoForm.value.meeting6P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.meeting8P">8P Meeting= {{requirementInfoForm.value.meeting8P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.meeting10P">8P Meeting= {{requirementInfoForm.value.meeting10P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.meeting12P">12P Meeting= {{requirementInfoForm.value.meeting12P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.meeting16P">16P Meeting= {{requirementInfoForm.value.meeting16P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.cubicalCount">Cubical= {{requirementInfoForm.value.cubicalCount}} ,</p>
+            <p *ngIf="requirementInfoForm.value.board20P">20P Board Room= {{requirementInfoForm.value.board20P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.board24P">24P Board Room= {{requirementInfoForm.value.board24P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.collab4P">4P Collab Area= {{requirementInfoForm.value.collab4P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.collab6P">6P Collab Area= {{requirementInfoForm.value.collab6P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.collab8P">8P Collab Area= {{requirementInfoForm.value.collab8P}} ,</p>
+            <p *ngIf="requirementInfoForm.value.dryPantryNumber">Dry Pantry Room= {{requirementInfoForm.value.dryPantryNumber}} ,</p>
+            <p *ngIf="requirementInfoForm.value.server1Rack">1 Rack Server= {{requirementInfoForm.value.server1Rack}} ,</p>
+            <p *ngIf="requirementInfoForm.value.server2Rack">2 Rack Server= {{requirementInfoForm.value.server2Rack}} ,</p>
+            <p *ngIf="requirementInfoForm.value.server3Rack">3 Rack Server= {{requirementInfoForm.value.server3Rack}} ,</p>
+            <p *ngIf="requirementInfoForm.value.server4Rack">4 Rack Server= {{requirementInfoForm.value.server4Rack}} ,</p>
+            <p *ngIf="requirementInfoForm.value.receptionSmall">Small Reception= {{requirementInfoForm.value.receptionSmall}} ,</p>
+            <p *ngIf="requirementInfoForm.value.receptionMedium">Medium Reception= {{requirementInfoForm.value.receptionMedium}} ,</p>
+            <p *ngIf="requirementInfoForm.value.receptionLarge">Large Reception= {{requirementInfoForm.value.receptionLarge}} ,</p>
+            <p *ngIf="requirementInfoForm.value.storeRoomNumber">Store Room= {{requirementInfoForm.value.storeRoomNumber}} ,</p>
+            <p *ngIf="requirementInfoForm.value.prayerRoomNumber">Prayer/Pooja Room= {{requirementInfoForm.value.prayerRoomNumber}} ,</p>
+            <p *ngIf="requirementInfoForm.value.cafeteriaNumber">Cafeteria= {{requirementInfoForm.value.cafeteriaNumber}} ,</p>
+            <p *ngIf="requirementInfoForm.value.wellnessRoomNumber">Wellness Room= {{requirementInfoForm.value.wellnessRoomNumber}},</p>
+            <p *ngIf="requirementInfoForm.value.phoneBoothNumber">Phone Booth= {{requirementInfoForm.value.phoneBoothNumber}} ,</p>
+            <p *ngIf="requirementInfoForm.value.nicheSeat2Pax">Niche Seat 2Pax= {{requirementInfoForm.value.nicheSeat2Pax}} ,</p>
+            <p *ngIf="requirementInfoForm.value.nicheSeat4Pax">Niche Seat 2Pax= {{requirementInfoForm.value.nicheSeat4Pax}} ,</p>
+            <p *ngIf="requirementInfoForm.value.trainingRoomNumber">Training Room = {{requirementInfoForm.value.trainingRoomNumber}} ,</p>
+            <p *ngIf="requirementInfoForm.value.gameRoomNumber">Game Room = {{requirementInfoForm.value.gameRoomNumber}}</p>
+          </div>
+        </div>
+        <div class="right">
+          <!-- <div class="counter-card">
+            <div class="counter">
+              <div class="label">Total Area Selected</div>
+              <div class="count">{{ totalWorkstationBooked }}</div>
+            </div>
+            <hr />
+            <div class="counter">
+              <div class="label">Total Area</div>
+              <div class="count">{{ totalWorkStationBalance }}</div>
+            </div>
+          </div> -->
+          <div class="counter-card">
+            <div class="counter">
+              <div class="label">Area Selected</div>
+              <div class="count">{{ areaOfSelectedSeat || 0 }} Sq.Ft</div>
+            </div>
+            <!-- <hr /> -->
+            <!-- <div class="counter">
+              <div class="label">Total Inventory</div>
+              <div class="count">{{ totalWorkStationBalance }}</div>
+            </div> -->
+          </div>
+          <div class="counter-card">
+            <div class="counter">
+              <div class="label">Total Inventory Selected</div>
+              <div class="count">{{ totalSelectedWorkstation }}</div>
+            </div>
+            <hr />
+            <div class="counter">
+              <div class="label">Total Inventory Available</div>
+              <div class="count">{{ totalAvailableWorkstation }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-action">
+        <button type="reset" mat-raised-button color="primary">
+        Reset
+        </button>
+        <!-- <button type="button" mat-raised-button color="primary">
+          Summarize Requirement
+        </button> -->
+        <button type="submit"  mat-raised-button color="primary">
+          Confirm Requirement <mat-icon>play_arrow </mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

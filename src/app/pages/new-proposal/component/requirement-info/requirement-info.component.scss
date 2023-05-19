@@ -1,0 +1,424 @@
+@mixin for-desktop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin field-card {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  // justify-content: space-around;
+  // justify-content: center;
+  // align-items: center;
+  // width: 25rem;
+  width: 18rem;
+  border-radius: 0.5rem;
+  // padding-inline-start: 1rem;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  @include for-desktop() {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+@mixin flex-column__center-center {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
+
+@mixin flex__center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #ececec;
+  min-height: 100vh;
+  gap: 2rem;
+}
+  .id {
+    display: flex;
+    //justify-content: flex-start;
+    justify-content: center;
+    width: inherit;
+    padding-block-start: 2rem;
+  }
+
+  .card {
+    background-color: #c3343a;
+    border-radius: 2rem;
+    padding: 0rem 1rem;
+    // margin-inline-start: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    @include for-desktop() {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .main-content {
+    display: flex;
+    width: inherit;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: inherit;
+      gap: 1rem;
+
+      .form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        // align-items: center;
+        gap: 3rem;
+        @include for-desktop() {
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+
+        .left {
+          @include flex-column__center-center();
+          gap: 1rem;
+          // flex-wrap: wrap;
+          // width:17rem;
+          // flex-direction: column;
+          @include for-desktop() {
+            //width: 60%;
+          }
+
+          .section {
+            @include flex__center-center();
+            align-items: flex-start;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            .field {
+              @include flex-column__center-center();
+              gap: 1rem;
+              .field-inputs{
+                display: flex;
+                font-size: 1.2rem;
+                flex-direction: row;
+                gap: 1rem;
+                justify-content: space-between;
+                input{
+                  background-color: white;
+                  width: 6rem;
+                  border-radius: 6px;
+                  font-size: 1.2rem;
+                  border: none;
+                }
+              }
+              .field-card {
+                background-color: #c3343a;
+                @include field-card();
+                // max-height: 50px;
+                // mat-form-field {
+                //   width: 10rem;
+                //   padding-inline: 1rem;
+                //   padding-block: 0.5rem;
+                // }
+                mat-panel-title{
+                  font-size: 1.2rem;
+                  color: white;
+                }
+
+                .sub-field-card__action-field {
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+
+                  mat-radio-group {
+                    display: flex;
+                    // flex-direction: column;
+                    align-items: flex-start;
+
+                    mat-radio-button {
+                      &:nth-child(even) {
+                        color: #ffffff;
+                      }
+
+                      color: #ffffff;
+                      font-size: 1.1rem;
+                      @include for-desktop() {
+                        font-size: 1rem;
+                      }
+                      padding: 0.3rem 0.7rem;
+                      border-radius: 0.5rem;
+                    }
+                  }
+                }
+              }
+
+              .field-card-odd {
+                @include field-card();
+                background-color: #7d7e80;
+
+                mat-form-field {
+                  width: 10rem;
+                  padding-inline: 1rem;
+                  padding-block: 0.5rem;
+                }
+
+                //removing up and down button on input type number
+                input[type="number"]::-webkit-outer-spin-button,
+                input[type="number"]::-webkit-inner-spin-button {
+                  appearance: none;
+                }
+              }
+            }
+          }
+        }
+.center{
+  // padding-block-start: 2rem;
+  color: rgb(7, 7, 7);
+  h2{
+    color: #c3343a;
+  }
+  width: 14rem;
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid #c3343a;
+  border-radius: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  .text{
+    padding-inline-start: 10px;
+    font-weight: 500;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+}
+        .right {
+          @include flex-column__center-center();
+          gap: 2rem;
+          border: 2px solid #c3343a;
+          border-radius: 2rem;
+          padding: 3rem;
+          @include for-desktop() {
+            width: 12rem;
+            padding: 1.5rem 3rem;
+          }
+
+          .counter-card {
+            width:14rem;
+            height: 14rem;
+
+            border-radius: 100%;
+            background-color: #fff;
+            box-shadow: -4px 8px 17px 0px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .counter {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              .label {
+                font-size: 1.2rem;
+                @include for-desktop() {
+                  font-size: 1rem;
+                }
+              }
+
+              .count {
+                font-size: 2rem;
+                font-weight: 700;
+                @include for-desktop() {
+                  font-size: 1.6rem;
+                  font-weight: 600;
+                }
+              }
+            }
+
+            hr {
+              width: 100%;
+            }
+          }
+
+          // .section {
+          //     @include flex-column__center-center();
+          //     gap: 2rem;
+
+          //     .field-card {
+          //         background-color: #C3343A;
+          //         @include field-card();
+
+          //         .sub-field-card__action-field {
+          //             display: flex;
+          //             justify-content: flex-end;
+          //             align-items: center;
+
+          //             mat-radio-group {
+          //                 display: flex;
+          //                 // flex-direction: column;
+          //                 align-items: flex-start;
+
+          //                 mat-radio-button {
+          //                     &:nth-child(even) {
+          //                         color: #ffffff;
+          //                     }
+
+          //                     color: #ffffff;
+          //                     font-size: 1.1rem;
+          //                     padding: 0.3rem 0.7rem;
+          //                     border-radius: 0.5rem;
+          //                 }
+
+          //             }
+          //         }
+
+          //         mat-form-field {
+          //             width: 4rem;
+          //             padding-inline: 1rem;
+          //             padding-block: 0.5rem;
+          //         }
+          //     }
+
+          //     // .sub-field-card {
+          //     //     @include flex-column__center-center();
+          //     //     gap: 0.5rem;
+
+          //     //     .sub-field-card__image {
+          //     //         display: flex;
+          //     //         justify-content: center;
+          //     //         align-items: center;
+          //     //         border-radius: 100%;
+          //     //         width: 8rem;
+          //     //         height: 8rem;
+
+          //     //         img {
+          //     //             width: inherit;
+          //     //             height: inherit;
+          //     //         }
+          //     //     }
+
+          //     //     .sub-field-card__action {
+          //     //         display: flex;
+          //     //         flex-wrap: nowrap;
+          //     //         gap: 0.3rem;
+
+          //     //         .sub-field-card__action-label {
+          //     //             font-size: 1.1rem;
+          //     //             font-weight: 500;
+
+          //     //             p {
+          //     //                 margin-block: 0rem;
+          //     //             }
+
+          //     //         }
+
+          //     //         .sub-field-card__action-field {
+
+          //     //             mat-radio-group {
+          //     //                 display: flex;
+          //     //                 flex-direction: column;
+          //     //                 align-items: flex-start;
+
+          //     //                 mat-radio-button {
+          //     //                     &:nth-child(even) {
+          //     //                         color: #7D7E80;
+          //     //                     }
+
+          //     //                     color: #C3343A;
+          //     //                     font-size: 1.1rem;
+          //     //                     padding: 0.3rem 0.7rem;
+          //     //                     border-radius: 0.5rem;
+          //     //                 }
+
+          //     //                 .with-input {
+          //     //                     background-color: #C3343A;
+          //     //                     color: #fff;
+          //     //                     padding-block: 0.3rem;
+          //     //                     padding-inline-end: 0.3rem;
+          //     //                     border-radius: 0.5rem;
+          //     //                     display: flex;
+
+          //     //                     mat-radio-button {
+          //     //                         color: #fff;
+          //     //                     }
+
+          //     //                     input {
+          //     //                         width: 2rem;
+          //     //                         border-radius: 0.5rem;
+          //     //                         outline: none;
+          //     //                         border: none;
+          //     //                         padding: 0.2rem;
+          //     //                         padding-inline-end: 0.5rem;
+          //     //                         font-size: 1.1rem;
+          //     //                         caret-color: #C3343A;
+          //     //                         color: #C3343A;
+
+          //     //                         &::placeholder{
+          //     //                             color: #C3343A;
+          //     //                         }
+
+          //     //                     }
+
+          //     //                     input[type='number']::-webkit-outer-spin-button,
+          //     //                     input[type='number']::-webkit-inner-spin-button {
+          //     //                         appearance: none;
+          //     //                     }
+          //     //                 }
+          //     //             }
+          //     //         }
+          //     //     }
+          //     // }
+          // }
+        }
+      }
+
+      .form-action {
+        display: flex;
+        //justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        width: inherit;
+        gap:1rem;
+        button {
+          font-size: 1.1rem;
+          font-weight: 600;
+          @include for-desktop() {
+            font-size: 1rem;
+            font-weight: 500;
+          }
+          min-width: 10rem;
+          min-height: 3rem;
+          margin-inline-end: 1rem;
+
+          &:last-child {
+            margin-inline-end: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+::ng-deep mat-expansion-indicator::after {
+  color: white !important;
+}
+
+

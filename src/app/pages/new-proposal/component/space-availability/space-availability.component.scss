@@ -1,0 +1,216 @@
+@mixin for-desktop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin flex-column {
+  flex-direction: column;
+}
+
+@mixin flex_center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  @include flex_center-center();
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fddede;
+  font-size:  1rem;
+  overflow-x: scroll;
+.button{
+  font-size: 0.9rem;
+}
+  .main-content {
+    @include flex_center-center();
+    @include flex-column();
+    gap: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    width: 65rem;
+    padding-block: 3rem;
+    @include for-desktop() {
+      width: 50rem;
+      padding-block: 1rem;
+    }
+    .space-availability {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #c3343a;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      @include for-desktop() {
+        margin-top: 0.5rem;
+        font-weight: 500;
+      }
+    }
+
+    form {
+      @include flex_center-center();
+      @include flex-column();
+      // gap: 1rem;
+
+      .consolidated-manner {
+        text-align: center;
+        @include flex_center-center();
+        @include flex-column();
+        color: #8b8c8d;
+        font-size: 1rem;
+        @include for-desktop() {
+          font-size:1rem;
+          font-weight: 500;
+        }
+        .consolidated-manner__action {
+          @include flex_center-center();
+          gap: 2rem;
+
+          @include for-desktop() {
+            gap: 1rem;
+          }
+
+          button {
+            width: 5rem;
+            height: 2rem;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .extra-proposal-details {
+        @include flex_center-center();
+        @include flex-column();
+        gap: 1.5rem;
+        font-size: 0.8rem;
+        @include for-desktop() {
+          font-size: 0.8rem;
+        }
+
+        .extra-proposal-details__top {
+          @include flex_center-center();
+          // gap: 2rem;
+          margin-block-start: 15px;
+          display: flex;
+          flex-direction: column;
+          color: #8b8c8d;
+          font-weight: 500;
+
+          .extra-proposal-details__top-left {
+            @include flex_center-center();
+            @include flex-column();
+            gap: 1rem;
+            color: #8b8c8d;
+            font-weight: 500;
+            .extra-proposal-details__top-left__fields {
+
+              @include flex_center-center();
+              gap: 1rem;
+              mat-form-field{
+                font-size: 0.8rem;
+
+              mat-label {
+                font-weight: 400;
+                @include for-desktop() {
+                  font-weight: 300;
+                }
+              }
+            }
+              p {
+                margin-block: 0rem;
+              }
+
+              input[type="number"]::-webkit-outer-spin-button,
+              input[type="number"]::-webkit-inner-spin-button {
+                appearance: none;
+              }
+            }
+          }
+
+          .extra-proposal-details__top-right {
+            @include flex_center-center();
+            @include flex-column();
+            gap: 1rem;
+
+            .extra-proposal-details__top-right__fields {
+              @include flex_center-center();
+              flex-wrap: wrap;
+            p{
+              width: 21rem;
+              font-size: 1rem;
+              text-align: center;
+            }
+              width: 100%;
+              gap: 1rem;
+              // height: 4.15rem;
+              mat-label {
+                font-weight: 600;
+                @include for-desktop() {
+                  font-weight: 300;
+                }
+              }
+              &:nth-child(2) {
+                p {
+                  flex-direction: column;
+                  width: 5rem;
+                  @include for-desktop() {
+                    width: 4rem;
+
+                  }
+                }
+
+                mat-form-field {
+                  width: 90%;
+                  font-size: 0.8rem;
+                }
+              }
+            }
+
+            &:last-child {
+              align-items: flex-start;
+            }
+          }
+        }
+
+        .extra-proposal-details__bottom {
+          @include flex_center-center();
+          gap: 2rem;
+          flex-direction: column;
+          button {
+            width: 12rem;
+            height: 2.7rem;
+          }
+        }
+      }
+
+      .form-action {
+
+        @include flex_center-center();
+        margin-block: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        button {
+          display: flex;
+          flex-direction: column;
+          width: 15rem;
+          height: 2.7rem;
+          font-size: 1.1rem;
+          align-items: center;
+          @include for-desktop() {
+            font-size: 1rem;
+            //width: 11rem;
+          }
+        }
+      }
+    }
+  }
+}
